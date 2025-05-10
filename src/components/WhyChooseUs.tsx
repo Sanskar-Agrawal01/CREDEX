@@ -22,16 +22,16 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section id="why-us" className="py-32">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
+    <section id="why-us" className="py-16 sm:py-24 md:py-32">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Why Choose Us</h2>
+          <p className="text-foreground/70 max-w-2xl mx-auto text-sm sm:text-base">
             The trusted platform for software license resale
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -44,8 +44,8 @@ const WhyChooseUs: React.FC = () => {
               <div className="bg-primary/10 p-3 rounded-lg mb-4 w-fit">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-foreground/70">{feature.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2">{feature.title}</h3>
+              <p className="text-foreground/70 text-sm sm:text-base">{feature.description}</p>
             </motion.div>
           ))}
         </div>

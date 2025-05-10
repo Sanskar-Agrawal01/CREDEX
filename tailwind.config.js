@@ -3,6 +3,24 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
+    screens: {
+      'xs': '475px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         background: {
@@ -18,20 +36,23 @@ export default {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           light: '#8B5CF6',
-          dark: '#A78BFA'
+          dark: '#A78BFA',
+          hover: '#7C3AED',
+          foreground: 'hsl(var(--primary-foreground))'
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           light: '#4B5563',
-          dark: '#9CA3AF'
+          dark: '#9CA3AF',
+          foreground: 'hsl(var(--secondary-foreground))'
         },
         accent: {
-          DEFAULT: '#F43F5E',
-          foreground: '#FFFFFF',
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))'
         },
         card: {
-          DEFAULT: '#0F0F0F',
-          foreground: '#FAFAFA',
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))'
         },
         border: {
           DEFAULT: 'hsl(var(--border))',
@@ -39,9 +60,9 @@ export default {
           dark: '#1F2937'
         },
         muted: {
-          DEFAULT: '#171717',
-          foreground: '#A3A3A3',
-        },
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))'
+        }
       },
       fontFamily: {
         sans: ['Syne', 'sans-serif'],
