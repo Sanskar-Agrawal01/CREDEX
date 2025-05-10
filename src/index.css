@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --border: 0 0% 12%;
+    --primary: 240 94% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 89% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 350 94% 60%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 64%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image: radial-gradient(
+      circle at center,
+      rgba(99, 102, 241, 0.05) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+@layer components {
+  .grid-background {
+    @apply bg-background;
+    background-size: 30px 30px;
+    background-image: linear-gradient(to right, rgba(31, 31, 31, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(31, 31, 31, 0.1) 1px, transparent 1px);
+  }
+
+  .glow-effect {
+    @apply relative;
+  }
+
+  .glow-effect::before {
+    @apply content-[''] absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-xl blur-md opacity-30;
+  }
+
+  .glow-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .button-primary {
+    @apply px-6 py-3 bg-primary hover:bg-primary-hover text-primary-foreground rounded-lg transition-all duration-300 font-medium;
+  }
+
+  .button-secondary {
+    @apply px-6 py-3 bg-transparent hover:bg-muted text-foreground border border-border rounded-lg transition-all duration-300 font-medium;
+  }
+
+  .card {
+    @apply bg-card border border-border rounded-xl p-6 backdrop-blur-sm;
+  }
+}
